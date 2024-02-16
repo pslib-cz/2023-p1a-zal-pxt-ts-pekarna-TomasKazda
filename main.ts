@@ -24,6 +24,6 @@ let data: Array<Odber> = [
 
 for (const peceme of data){
     console.logValue("čas: ", peceme.cas);
-    console.logValue("spotřeba: ", peceme.spotreba);
+    console.logValue("příkon: ", peceme.spotreba);
     console.logValue("spotřebováno: ", peceme.spotreba / 3600 * peceme.cas);
 }
