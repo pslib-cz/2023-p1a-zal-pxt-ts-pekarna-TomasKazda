@@ -22,8 +22,11 @@ let data: Array<Odber> = [
     { cas: 800, spotreba: 1500 },
 ]
 
+let sumW: number = 0;
+let sumT: number = 0;
 for (const peceme of data){
-    console.logValue("čas: ", peceme.cas);
-    console.logValue("příkon: ", peceme.spotreba);
-    console.logValue("spotřebováno: ", peceme.spotreba / 3600 * peceme.cas);
+    sumW += peceme.spotreba / 3600 * peceme.cas;
+    sumT += peceme.cas;
 }
+console.logValue("Cena pečení [Kč]: ", Math.round(cena * (sumW / 10)) / 100);
+console.logValue("Odběr trouby [kWh]: ", Math.round(sumW / (sumT / 3600) / 10)/100)
